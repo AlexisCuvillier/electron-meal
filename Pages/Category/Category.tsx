@@ -1,6 +1,6 @@
 import './Category.css';
 import { useState, useEffect } from 'react';
-import NavBar from '../../Components/NavBar/NavBar';
+import NavBar from '../../src/Components/NavBar/NavBar';
 import CardMeat from 'Components/CardMeat/CardMeat';
 export default function Category() {
   const [category, setCategory] = useState([]);
