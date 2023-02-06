@@ -1,0 +1,33 @@
+.home {
+      background-color: rgb(236, 235, 235);
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 15px;
+        border: green 2px solid;
+        appearance: none;
+        font-size: 1.3rem;
+        transition: all ease-in 0.1s;
+        cursor: pointer;
+        opacity: 0.9;
+        
+
+
+      
+}
+
+.Appi {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/HomePage.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.welcome {
+  position: absolute; /* postulat de départ */
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  text-align: center;
+ 
+}

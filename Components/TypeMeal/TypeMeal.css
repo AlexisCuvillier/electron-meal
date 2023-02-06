@@ -1,0 +1,11 @@
+.typeCard {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3%;
+    align-items: center;
+    justify-content: center;
+    
+}
+

@@ -1,0 +1,39 @@
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+}
+
+.navBarBase {
+    display: grid;
+    justify-content: space-around;
+    background-color: rgb(143, 35, 214);
+    grid-template-columns: 10% 40% 40% 10% ;
+    /* justify-content: center; */
+   /* justify-content: space-around;  */
+   /* grid-auto-flow: column; */
+    
+   border-bottom-left-radius: 25% 60px ;
+   border-bottom-right-radius: 25% 60px;
+}
+
+.Base1 {
+    grid-column-start: 1;
+}
+
+
+
+.Base2 {
+   grid-column-start: 3;
+}
+.Base2 input[type=text] {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 70%;
+    height: 25px;
+    margin-top: 65px;
+    padding-left: 10px;
+    margin-right: 50px;
+    padding: 5px 5px;
+  }
+
