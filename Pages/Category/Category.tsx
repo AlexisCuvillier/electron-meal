@@ -51,7 +51,7 @@ export default function Category() {
     fetchMeal();
   }, [idMeal]);
 
-  console.log('meal', meal);
+
 
 
   return (

@@ -9,10 +9,33 @@ export default function TypeMeal() {
   const [idMeal, setIdMeal]: any = useState([]);
   const [meal, setMeal]: any = useState([]);
 
+
+  const [searchMeal, setSearchMeal] = useState('');
+  const [searchState, setSearchState]: any = useState([]);
+
+
   useEffect(() => {
     fetchPays();
     fetchMealCountry();
-  }, [idMeal]);
+    fetchSearchMeal();
+  }, [idMeal,searchMeal]);
+
+  const search = (e : any) => {
+    e.preventDefault();
+    setSearchMeal(e.currentTarget.value)
+  }
+
+  const fetchSearchMeal = async () => {
+    const res = await fetch (
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal}`
+    )
+    const searchRes = await res.json();
+    setSearchState(searchRes)
+
+  }
+  console.log('searchMeal',searchMeal);
+  console.log('searchState',searchState);
+  
 
   const TriggerId = (e: any) => {
     e.preventDefault();
@@ -39,7 +62,7 @@ export default function TypeMeal() {
 
   return (
     <>
-    <NavBar />
+    <NavBar searchMeal={search} />
       <div className="typeCard">
         {idMeal == '' ? (
           platPays.map((item: any) => {

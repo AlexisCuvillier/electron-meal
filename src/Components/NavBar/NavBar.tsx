@@ -2,7 +2,7 @@ import './NavBar.css';
 import logo from '../../../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
-export default function NavBar() {
+export default function NavBar(props : any) {
 
   const navigate = useNavigate()
   function handleClick() {
@@ -20,8 +20,8 @@ export default function NavBar() {
           <img onClick={returnHome} className="logo" src={logo} alt="" />
         </div>
         <div className="Base2">
-          <input type="text" placeholder="Search meal" />
-          <button onClick={handleClick}  >Category</button>
+          <input onChange={props.searchMeal} type="text" placeholder="Search meal" />
+          <button onClick={handleClick}>Category</button>
         </div>
       </div>
     </>
