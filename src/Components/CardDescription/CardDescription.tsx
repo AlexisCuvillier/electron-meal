@@ -1,22 +1,22 @@
-import './CardDescription.css'
+import './CardDescription.css';
 
-export default function CardDescription(props : any) {
+export default function CardDescription(props: any) {
   return (
     <div>
-      <div>
+      <div className='divTitleMeal'>
         <h3>{props.name}</h3>
-        <h5>{props.country}</h5>
+        <h5>{props.country} meal</h5>
       </div>
-      <div>
-        <div>
 
-      <img src={props.img} alt="" />
+      <div className='gridImgTable'>
+        <div className='divImgMeal'>
+          <img src={props.img} alt="" />
         </div>
-        <div>
+        <div className="tableIngredient">
           <table>
             <thead>
               <tr>
-                <th colSpan={2}>Ingrédient</th>
+                <th colSpan={2}>Ingrédient :</th>
               </tr>
             </thead>
             <tbody>
@@ -103,10 +103,10 @@ export default function CardDescription(props : any) {
             </tbody>
           </table>
         </div>
-        <div>
-          <p>Instruction</p>
-          <p>{props.instruction}</p>
-        </div>
+      <div className='instruction'>
+        <p>Instruction :</p>
+        <p className='instructionP'>{props.instruction}</p>
+      </div>
       </div>
     </div>
   );

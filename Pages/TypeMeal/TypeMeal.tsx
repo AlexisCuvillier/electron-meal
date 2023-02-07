@@ -1,7 +1,8 @@
 import './TypeMeal.css';
 import { useState, useEffect } from 'react';
 import CardMeat from 'Components/CardMeat/CardMeat';
-import CardDescription from '../CardDescription/CardDescription';
+import CardDescription from '../../src/Components/CardDescription/CardDescription';
+import NavBar from 'Components/NavBar/NavBar';
 
 export default function TypeMeal() {
   const [platPays, setPlatPays]: any = useState([]);
@@ -38,6 +39,7 @@ export default function TypeMeal() {
 
   return (
     <>
+    <NavBar />
       <div className="typeCard">
         {idMeal == '' ? (
           platPays.map((item: any) => {

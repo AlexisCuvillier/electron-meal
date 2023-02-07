@@ -9,7 +9,7 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell, ipcMain, Notification } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -69,6 +69,8 @@ const createWindow = async () => {
     return path.join(RESOURCES_PATH, ...paths);
   };
 
+
+
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
@@ -124,10 +126,19 @@ app.on('window-all-closed', () => {
   }
 });
 
+
+const NOTIFICATION_TITLE = 'Bonjour'
+const NOTIFICATION_BODY = 'Bienvenue sur électron meal une application vous proposant des recettes.'
+
+function showNotification () {
+  new Notification({ title: NOTIFICATION_TITLE, body: NOTIFICATION_BODY }).show()
+}
+
+
 app
   .whenReady()
   .then(() => {
-    createWindow();
+    createWindow().then(showNotification);
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
